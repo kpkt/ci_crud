@@ -28,7 +28,7 @@ echo form_error('body', '<div class="error">', '</div>');
 echo '</div>';
 
 echo '<div class="form-group">';
-echo form_submit(array('name' => 'submit', 'value' => 'Submit'));
+echo form_submit(array('name' => 'submit', 'value' => 'Submit','class' => 'btn btn-success'));
 echo '</div>';
 
 echo form_close();

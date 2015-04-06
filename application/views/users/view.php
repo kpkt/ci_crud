@@ -1,5 +1,5 @@
 <h2>User Details 
-    <p class="pull-right"><a href="<?php echo base_url("index.php/users/edit/" . $user['user_id']); ?>" class="btn btn-warning btn-sm">Edit User</a></p>
+    <p class="pull-right"><a href="<?php echo base_url("users/edit/" . $user['user_id']); ?>" class="btn btn-warning btn-sm">Edit User</a></p>
 </h2>
 <dl class="dl-horizontal">
     <dt>#ID</dt>

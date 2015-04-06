@@ -1,5 +1,5 @@
 <h2>Post Details 
-    <p class="pull-right"><a href="<?php echo base_url("index.php/posts/edit/" . $post['post_id']); ?>" class="btn btn-warning btn-sm">Edit Post</a></p>
+    <p class="pull-right"><a href="<?php echo base_url("posts/edit/" . $post['post_id']); ?>" class="btn btn-warning btn-sm">Edit Post</a></p>
 </h2>
 
 <dl class="dl-horizontal">

@@ -30,6 +30,8 @@ class UserModel extends CI_Model {
         $Q = $this->db->get('users');
         if ($Q->num_rows() > 0) {
             return $Q->result_array();
+        } else {
+            return FALSE;
         }
     }
 
@@ -87,9 +89,12 @@ class UserModel extends CI_Model {
         $users = $this->listing();
         $user_id = array('--Pilihan--');
         $user_name = array('--Pilihan--');
-        foreach ($users as $user) {
-            array_push($user_id, $user['user_id']);
-            array_push($user_name, $user['name']);
+        if (!empty($users)) {
+            foreach ($users as $user) {
+                array_push($user_id, $user['user_id']);
+                array_push($user_name, $user['name']);
+            }
+            return $user_list = array_combine($user_id, $user_name);
         }
         return $user_list = array_combine($user_id, $user_name);
     }

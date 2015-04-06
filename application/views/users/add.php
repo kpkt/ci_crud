@@ -1,27 +1,26 @@
+
+<h2><?php echo 'Add User'; ?></h2>
+<?php echo form_open('users/add', array('class' => 'form-horizontal')); ?>
+<div class="form-group">
+    <label for="UserName" class="col-sm-2 control-label">User Name :</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" name="name" id="UserName" placeholder="Full Name">
+        <?php echo form_error('name', '<div class="error">', '</div>'); ?>
+    </div>
+</div>
+<div class="form-group">
+    <label for="UserEmail" class="col-sm-2 control-label">User Email :</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" name="email" id="UserEmail" placeholder="user@example.com">
+            <?php echo form_error('email', '<div class="error">', '</div>'); ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    <?php echo form_submit(array('name' => 'submit', 'value' => 'Submit', 'class' => 'btn btn-success')); ?>
+        </div>
+    
+</div>
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-echo '<h2>Add User</h2>';
-echo form_open('users/add', array('class' => 'form-horizontal')); //
-
-echo '<div class="form-group has-error">';
-echo form_label('User Name :', null, 'control-label');
-echo form_input(array('id' => 'UserName', 'name' => 'name'));
-echo form_error('name', '<div class="error">', '</div>');
-echo '</div>';
-
-echo '<div class="form-group">';
-echo form_label('User Email :', null, 'control-label');
-echo form_input(array('id' => 'UserEmail', 'name' => 'email'));
-echo form_error('email', '<div class="error">', '</div>');
-echo '</div>';
-
-echo '<div class="form-group">';
-echo form_submit(array('name' => 'submit', 'value' => 'Submit'));
-echo '</div>';
-
 echo form_close();
