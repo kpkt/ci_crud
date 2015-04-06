@@ -5,8 +5,10 @@ if (!defined('BASEPATH'))
 
 class Welcome extends CI_Controller {
 
-    public function index($page = "welcome_message") {
-        $data['title'] = ucfirst($page); // Capitalize the first letter            
+    public function index() {
+
+        $data['title'] = ucfirst("welcome_message"); // Capitalize the first letter    
+        $data['main'] = 'welcome_message';
         $this->load->view('layouts/default', $data);
     }
 

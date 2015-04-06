@@ -6,7 +6,7 @@
             <li role="presentation"><a href="<?php echo base_url("index.php/posts/index") ?>">Posts</a></li>
         </ul>
     </nav>
-    <h3 class="text-muted">Project name</h3>
+    <h3 class="text-muted">Project: Codeigniter CRUD</h3>
 </div>
 <?php
 $message = $this->session->flashdata('item');
