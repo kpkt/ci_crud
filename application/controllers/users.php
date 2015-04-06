@@ -55,9 +55,9 @@ class Users extends CI_Controller {
      * edit method     
      * @param string user_id
      */
-    public function edit($user_id) {
+    public function edit($user_id = null) {
         //Cheching data is not empty
-        if (!$this->UserModel->exists($user_id)) {
+        if (!empty($user_id) && !$this->UserModel->exists($user_id)) {
             $this->session->set_flashdata('item', array('message' => 'Invalid or Data not found!', 'class' => 'danger')); //danger or success            
             redirect('users/index'); // back to the index
         }
@@ -96,7 +96,7 @@ class Users extends CI_Controller {
             $this->session->set_flashdata('item', array('message' => 'Invalid or Data not found!', 'class' => 'danger')); //danger or success            
             redirect('users/index'); // back to the index
         }
-        
+
         $data['user'] = $this->UserModel->read($user_id);
         $data['main'] = '/users/view';
         $this->load->view('layouts/default', $data);

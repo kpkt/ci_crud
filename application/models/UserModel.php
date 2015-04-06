@@ -26,7 +26,7 @@ class UserModel extends CI_Model {
      * @return void
      * @desc This function use for checking whether data exists or not
      */
-    function listing() {
+    public function listing() {
         $Q = $this->db->get('users');
         if ($Q->num_rows() > 0) {
             return $Q->result_array();
@@ -75,6 +75,23 @@ class UserModel extends CI_Model {
         $this->db->where('user_id', $user_id);
         $this->db->delete('users');
         return TRUE;
+    }
+
+    /*     * **************Aditional Function**************** */
+
+    /**
+     * dropdown_list method     
+     * @return void
+     */
+    public function dropdown_list() {
+        $users = $this->listing();
+        $user_id = array('--Pilihan--');
+        $user_name = array('--Pilihan--');
+        foreach ($users as $user) {
+            array_push($user_id, $user['user_id']);
+            array_push($user_name, $user['name']);
+        }
+        return $user_list = array_combine($user_id, $user_name);
     }
 
 }

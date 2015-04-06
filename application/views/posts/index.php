@@ -1,13 +1,12 @@
-<h2>Posts List 
-    <p class="pull-right"><a href="" class="btn btn-primary btn-sm">Add Post</a></p>
+<h2>Posts List    
+    <p class="pull-right"><a href="<?php echo base_url("index.php/posts/add"); ?>" class="btn btn-primary btn-sm">Add Post</a></p>
 </h2>
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped" id="postTable">
     <thead>
         <tr>
-            <td>#</td>
+            <td>ID</td>
             <td>Author</td>
-            <td>Name</td>
-            <td>Email</td>
+            <td>Title</td>
             <td style="width: 175px">Action</td>
         </tr>
     </thead>
@@ -18,13 +17,12 @@
                 <td><?php echo $i++ ?></td>
                 <td><?php echo $post['name']; ?></td>
                 <td><?php echo $post['title']; ?></td>
-                <td><?php echo $post['body']; ?></td>
                 <td>
-                    <a href="<?php echo base_url("index.php/posts/view/" . $post['post_id']); ?>" class="btn btn-default btn-sm">View</a>
-                    <a href="<?php echo base_url("index.php/posts/edit/" . $post['post_id']); ?>" class="btn btn-default btn-sm">Edit</a>                    
+                    <a href="<?php echo base_url("index.php/posts/view/" . $post['post_id']); ?>" class="btn btn-default btn-xs">View</a>
+                    <a href="<?php echo base_url("index.php/posts/edit/" . $post['post_id']); ?>" class="btn btn-default btn-xs">Edit</a>                    
                     <a href="<?php echo base_url("index.php/posts/delete/" . $post['post_id']); ?>"
                        onclick="return confirm('Are you sure you want to delete this item? <?php echo $post['title'] ?>');" 
-                       class="btn btn-default btn-sm">Delete</a>
+                       class="btn btn-default btn-xs">Delete</a>
                 </td>
             </tr>
         <?php endforeach; ?>

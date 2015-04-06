@@ -3,7 +3,9 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
+form .error{
+    color : #E13300
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,

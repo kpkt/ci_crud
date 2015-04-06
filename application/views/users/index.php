@@ -4,7 +4,7 @@
 <table class="table table-bordered table-striped" id="userTable">
     <thead>
         <tr>
-            <th>#</th>
+            <th>ID</th>
             <th>Name</th>
             <th>Email</th>
             <th style="width: 175px">Action</th>
