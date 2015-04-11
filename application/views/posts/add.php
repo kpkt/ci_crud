@@ -24,6 +24,7 @@ echo '</div>';
 echo '<div class="form-group">';
 echo form_label('Post Body :', null, 'control-label');
 echo form_textarea(array('id' => 'PostBody', 'name' => 'body','class'=>'form-control'));
+echo "<p>Try put %postauthor% in your body content to show name of Author</p>";
 echo form_error('body', '<div class="error">', '</div>');
 echo '</div>';
 

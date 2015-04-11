@@ -1,3 +1,4 @@
+<?php $postname = $post['name']; ?>
 <h2>Post Details 
     <p class="pull-right"><a href="<?php echo base_url("posts/edit/" . $post['post_id']); ?>" class="btn btn-warning btn-sm">Edit Post</a></p>
 </h2>
@@ -10,5 +11,12 @@
     <dt>Post Title</dt>
     <dd><?php echo $post['title'] ?></dd>
     <dt>Post Body</dt>
-    <dd><?php echo $post['body'] ?></dd>   
+    <?php
+    
+    $message =  $post['body']; 
+    $message = str_replace('%postauthor%', $postname, $message); 
+    //$message = str_replace('%email%', $email, $message); 
+    
+    ?>
+    <dd><?php echo $message ?></dd>   
 </dl>
